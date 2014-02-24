@@ -1,0 +1,10 @@
+.container
+  %h2 Dashboard
+  = link_to "Add a job position", new_position_path
+
+  - @positions.each do |position|
+    
+    = position.name
+    = position.description
+    = link_to "details", position
+    %hr
