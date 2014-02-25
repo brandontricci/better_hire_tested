@@ -1,6 +1,6 @@
 class PositionsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :find_position, only: [:edit, :show, :update]
+  before_action :find_position, only: [:edit, :show, :update, :destroy]
   def index
     @positions = Position.all
   end
@@ -32,6 +32,11 @@ class PositionsController < ApplicationController
       flash.now[:alert] = "There was an error updating your job position"
       render :edit
     end
+  end
+
+  def destroy
+    @position.destroy 
+    redirect_to positions_path, notice: "Your job position has been deleted."
   end
 
 

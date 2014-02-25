@@ -1,3 +1,6 @@
-%h2
-  = "#{@position.name} template"
-= link_to "Edit", edit_position_path(@position)
+.container
+  %h2
+    = "#{@position.name} template"
+  .row
+    = link_to "Edit", edit_position_path(@position), class: "btn btn-success"
+    = link_to "Back to all", positions_path, class: "btn"

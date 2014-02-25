@@ -4,9 +4,8 @@ describe PositionsController do
   include Devise::TestHelpers
 
 
-  before (:each) do
-    @user = create :user
-    sign_in @user
+  before do
+    login
   end
   
   describe "GET #index" do
@@ -95,6 +94,17 @@ describe PositionsController do
       expect(response).to render_template('edit') 
     end
   end
+
+  describe "DELETE #delete" do
+
+    it "should delete @position" do
+      position = create :position
+      delete :destroy, id: position.id
+      expect(Position.count) == 0
+    end
+  end
+
+
 
 
 end

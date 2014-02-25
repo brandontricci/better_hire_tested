@@ -30,15 +30,15 @@ body { padding-top: 100px; }//for navbar
 }
 
 .nav-inner > ul > li {
-  padding-left: 15px;
+  padding-right: 15px;
   float: right;
   a:hover {
 
   }
 }
 
-.active {
-  color: white;
+.navbar-link.active {
+  color: #04a466;
 }
 
 

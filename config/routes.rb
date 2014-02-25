@@ -4,10 +4,6 @@ BetterHireTdd::Application.routes.draw do
 
   resources :positions
 
-  authenticated do
-    root to:'positions#index',  as: :user_root
-  end
-
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 
 gem  "haml-rails"
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 
 gem 'devise'
 
@@ -27,7 +27,8 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem "capybara-webkit"
+  gem "database_cleaner"
 end
 
 gem "bootstrap-sass"
