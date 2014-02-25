@@ -1,3 +1,4 @@
+
 @import 'bootstrap';
 
 
@@ -19,14 +20,28 @@ body { padding-top: 100px; }//for navbar
   margin-bottom: 0px;
 }
 
+.navbar-text {
+  list-style: none;
+}
+
 .navbar a {
   text-decoration:none;
   color: rgb(4,164,102)
 }
 
-.navbar a:hover {
+.nav-inner > ul > li {
+  padding-left: 15px;
+  float: right;
+  a:hover {
+
+  }
+}
+
+.active {
   color: white;
 }
+
+
 
 #welcome-title {
   font-size: 6em;
