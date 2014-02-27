@@ -1,6 +1,7 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top{role: "navigation"}
-  .nav-inner
-    %ul.navbar-text.navbar-left
+  / .nav-inner
+  .container
+    %ul.navbar-text
       / %li= link_to "A Better Hire", root_url, class: "navbar-link #{'active'  if controller.controller_name == 'welcome'}"
       %li= link_to "Job positions", positions_path, class: "navbar-link #{'active' if controller.controller_name == 'positions'}"
     %ul.nav.navbar-text.navbar-right

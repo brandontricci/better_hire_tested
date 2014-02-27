@@ -13,13 +13,13 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
-module FeatureHelpers
-  def login
-    user = create(:user)
-    login_as user, scope: :user
-    user
-  end
-end
+# module FeatureHelpers
+#   def login
+#     user = create(:user)
+#     login_as user, scope: :user
+#     user
+#   end
+# end
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -36,7 +36,6 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -49,7 +48,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   config.include FactoryGirl::Syntax::Methods
-  config.include Devise::TestHelpers, :type => :controller
+
   config.include FeatureHelpers, type: :feature
   config.include FeatureHelpers, type: :controller
 

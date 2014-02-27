@@ -1,9 +1,7 @@
-include Warden::Test::Helpers
-
 module FeatureHelpers
+  include Devise::TestHelpers
   def login
     user = FactoryGirl.create(:user)
-    login_as user, scope: :user
-    user
+    sign_in user
   end
 end

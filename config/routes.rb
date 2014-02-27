@@ -2,8 +2,10 @@ BetterHireTdd::Application.routes.draw do
 
   devise_for :users
 
-  resources :positions
-
+  resources :positions do
+    resources :questions, except: [:index, :show]
+  end
+  get "testing" => 'welcome#test'
   root "welcome#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

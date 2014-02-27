@@ -1,8 +1,12 @@
 require "spec_helper"
+include Warden::Test::Helpers
+Warden.test_mode!
 
 feature :position do
+  let(:user) { FactoryGirl.create(:user) }
+
   before do
-    login
+    login_as user, scope: :user
   end
   
   scenario "A user creates a position successfully" do
