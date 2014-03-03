@@ -1,6 +1,6 @@
 - if @question.errors.any?
   #error_explanation
-    %h2
+    %p
       = pluralize(@question.errors.count, "error")
       prohibited the project from being saved:
     %ul
